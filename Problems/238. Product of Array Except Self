@@ -1,0 +1,26 @@
+# Python
+
+# 
+
+## O(n^2) Solution & using division solution
+```
+class Solution(object):
+    def productExceptSelf(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        my_list =[]
+
+        for i in range(len(nums)):
+            mul = 1
+            for index, val in enumerate(nums):
+                if index != i :
+                    mul *= val
+            my_list.append(mul)
+        return my_list
+
+        
+
+
+```

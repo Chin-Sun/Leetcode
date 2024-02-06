@@ -1,6 +1,25 @@
 # Python
 
+## Better Solution
+```
+class Solution(object):
+    def productExceptSelf(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        renums = [1]*len(nums)
+        pre = 1
 
+        for i in range(len(nums)):
+            renums[i] = pre
+            pre *= nums[i]
+        post = 1
+        for i in range(len(nums)-1,-1,-1):
+            renums[i] = post * renums[i]
+            post *= nums[i]
+        return renums 
+```
 
 ## O(n^2) Solution & using division solution
 ```
